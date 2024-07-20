@@ -13,7 +13,7 @@ const db = require('./models')
 const schoolRouter = require('./routes/Schools')
 app.use('/schools', schoolRouter)
 
-const port = 3001
+const port = 3000
 
 db.sequelize.sync().then(() => {
     app.listen(port, () => {
