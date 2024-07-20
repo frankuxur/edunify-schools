@@ -13,8 +13,10 @@ const db = require('./models')
 const schoolRouter = require('./routes/Schools')
 app.use('/schools', schoolRouter)
 
+const port = process.env.PORT || 3001
+
 db.sequelize.sync().then(() => {
-    app.listen(process.env.PORT || 3001, () => {
-        console.log('server running on port 3001')
+    app.listen(port, () => {
+        console.log(`server running on port ${port}`)
     })
 })
